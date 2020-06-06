@@ -66,7 +66,7 @@ export default {
     submit () {
       req.authRequest({
         method: 'post',
-        url: '/api/articles',
+        url: '/articles',
         data: {
           title: this.title,
           body: this.body

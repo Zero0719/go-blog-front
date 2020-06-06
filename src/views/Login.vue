@@ -37,7 +37,7 @@ export default {
     login () {
       this.$http({
         method: 'POST',
-        url: '/api/authorizations',
+        url: '/authorizations',
         data: {
           email: this.email,
           password: this.password

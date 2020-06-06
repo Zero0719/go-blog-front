@@ -12,6 +12,7 @@ import 'mavon-editor/dist/css/index.css'
 
 // eslint-disable-next-line camelcase
 var axios_instance = Axios.create({
+  baseURL: 'http://api.blog.kayuho.com',
   // config里面有这个transformRquest， 这个选项会在发送参数前进行处理。 这时候我们通过Qs.stringify转换为表单查询参数
   transformRequest: [function (data) {
     data = Qs.stringify(data)

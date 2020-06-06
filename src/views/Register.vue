@@ -39,7 +39,7 @@ export default {
     register () {
       this.$http({
         method: 'post',
-        url: '/api/users',
+        url: '/users',
         data: {
           nick_name: this.nick_name,
           email: this.email,

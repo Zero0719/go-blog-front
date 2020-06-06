@@ -6,7 +6,6 @@ export default {
     options.headers = {
       Authorization: 'Bearer ' + user.token
     }
-    console.log(options)
     return axios.request(options)
   }
 }

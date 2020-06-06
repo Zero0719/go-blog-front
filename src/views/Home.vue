@@ -48,7 +48,7 @@ export default {
       this.loading = true
       this.$http({
         method: 'get',
-        url: '/api/articles',
+        url: '/articles',
         params: {
           page: this.page,
           pageSize: this.pageSize

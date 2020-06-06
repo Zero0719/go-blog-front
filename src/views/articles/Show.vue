@@ -31,7 +31,7 @@ export default {
       const id = this.$route.params.id
       this.$http({
         method: 'get',
-        url: '/api/articles/' + id
+        url: '/articles/' + id
       }).then(res => {
         this.article = res.data.data
       }).catch(err => {
