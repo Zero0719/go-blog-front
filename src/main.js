@@ -7,6 +7,8 @@ import './main.css'
 import Axios from 'axios'
 import VueAxios from 'vue-axios'
 import Qs from 'qs'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 // eslint-disable-next-line camelcase
 var axios_instance = Axios.create({
@@ -21,6 +23,7 @@ var axios_instance = Axios.create({
   }
 })
 Vue.use(VueAxios, axios_instance)
+Vue.use(mavonEditor)
 
 Vue.config.productionTip = false
 

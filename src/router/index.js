@@ -27,6 +27,22 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: () => import('../views/Register.vue')
+  },
+  {
+    path: '/articles',
+    name: 'ArticleForm',
+    component: () => import('../views/articles/Form.vue'),
+    meta: { auth: true }
+  },
+  {
+    path: '/articles/:id',
+    name: 'ArticleShow',
+    component: () => import('../views/articles/Show.vue')
+  },
+  {
+    path: '*',
+    name: 'error',
+    component: () => import('../views/error/404.vue')
   }
 ]
 
@@ -34,6 +50,19 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.auth)) {
+    const user = JSON.parse(localStorage.getItem('user'))
+    if (!user) {
+      next('/login')
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 export default router

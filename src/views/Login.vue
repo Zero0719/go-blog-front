@@ -6,7 +6,7 @@
       <Alert type="error" v-if="errorCount>0" closable @on-close="clearError">
         <p v-for="(item,index) in errors" :key="index">{{ item }}</p>
       </Alert>
-      <Button class="my-2" type="success" @click="login">登录</Button>
+      <Button class="my-2" type="primary" @click="login">登录</Button>
     </form>
   </div>
 </template>
@@ -25,6 +25,13 @@ export default {
     errorCount: function () {
       return (Object.keys(this.errors)).length
     }
+  },
+  beforeRouteEnter: (to, from, next) => {
+    next(vm => {
+      if (vm.$store.state.user) {
+        vm.$router.push('/')
+      }
+    })
   },
   methods: {
     login () {

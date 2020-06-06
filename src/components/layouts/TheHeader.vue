@@ -10,7 +10,7 @@
         <div class="navbar-right">
           <div v-if="user" class="flex justify-center text-base">
             <div>
-              <router-link to="article" class="mr-4">
+              <router-link to="/articles" class="mr-4">
                 <Icon type="md-add" />
               </router-link>
             </div>
